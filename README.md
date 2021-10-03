@@ -86,6 +86,29 @@ Traceback (most recent call last):
   File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/__init__.py", line 633, in polling
     self.__threaded_polling(non_stop, interval, timeout, long_polling_timeout, allowed_updates)
   File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/__init__.py", line 692, in __threaded_polling
+    raise e
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/__init__.py", line 654, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/util.py", line 100, in raise_exceptions
+    raise self.exception_info
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/util.py", line 82, in run
+    task(*args, **kwargs)
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/__init__.py", line 391, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/__init__.py", line 371, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates, long_polling_timeout)
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/apihelper.py", line 312, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/telebot/apihelper.py", line 139, in _make_request
+    result = _get_req_session().request(
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/skv_sale/bot/venvBOT/lib/python3.8/site-packages/requests/adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
+
 ```
 
 # Вопросы
